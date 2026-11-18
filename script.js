@@ -274,7 +274,7 @@ rsvpForm.addEventListener("submit", async event => {
     const pageHistory = document.createElement("input");
     pageHistory.type = "hidden";
     pageHistory.name = "pageHistory";
-    pageHistory.value = isPresent ? "0";
+    pageHistory.value = "0";
     hiddenForm.appendChild(pageHistory);
 
     const fvv = document.createElement("input");
@@ -408,7 +408,7 @@ restaurantForm.addEventListener("submit", event => {
   const pageHistory = document.createElement("input");
   pageHistory.type = "hidden";
   pageHistory.name = "pageHistory";
-  pageHistory.value = willAttend ? "0";
+  pageHistory.value = "0";
   hiddenForm.appendChild(pageHistory);
   const fvv = document.createElement("input");
   fvv.type = "hidden";
