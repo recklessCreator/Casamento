@@ -421,7 +421,32 @@ restaurantForm.addEventListener("submit", event => {
   HTMLFormElement.prototype.submit.call(hiddenForm);
   hiddenForm.remove();
 
-  restaurantStatus.textContent = "Resposta enviada! Obrigado por nos ajudar a organizar a comemoração. 💙";
-  restaurantForm.reset();
-  updateRestaurantFields();
+  // Dá tempo para o envio ao Forms ser iniciado antes de mudar de página
+  setTimeout(() => {
+    const restResponsePage = document.querySelector("#restaurantResponse");
+    const restResponseTitle = document.querySelector("#restResponseTitle");
+    const restResponseText = document.querySelector("#restResponseText");
+
+    // Muda o texto dependendo se a pessoa vai ou não
+    if (willAttend) {
+      restResponseTitle.textContent = "Tudo certo!";
+      restResponseText.textContent = "Sua presença no Pampeiros está anotada. Obrigado por nos ajudar a organizar a comemoração! 💙";
+    } else {
+      restResponseTitle.textContent = "Compreendemos!";
+      restResponseText.textContent = "Agradecemos por nos avisar. Ficamos felizes em ter você na nossa cerimônia!";
+    }
+
+    restaurantStatus.textContent = "";
+    restaurantForm.reset();
+    updateRestaurantFields();
+
+    // Faz a transição para a nova tela de Obrigado
+    const targetIndex = pages.indexOf(restResponsePage);
+    if (targetIndex !== -1) showPage(targetIndex, 1);
+  }, 700);
+});
+
+// Evento do botão para voltar à capa do convite a partir da tela do restaurante
+document.querySelector("#backToInvitationFromRest").addEventListener("click", () => {
+  showPage(0, -1);
 });
