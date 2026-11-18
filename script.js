@@ -354,7 +354,8 @@ const RESTAURANT_GOOGLE_FORM = {
   entries: {
     nome_restaurante: "entry.1703527816",
     presenca_restaurante: "entry.1305228740",
-    quantidade_restaurante: "entry.1957702844"
+    quantidade_restaurante: "entry.1957702844",
+    nomes_acompanhantes_restaurante: "entry.822492353"
   }
 };
 
