@@ -261,15 +261,35 @@
                 <option value="5 pessoas ou mais">5 pessoas ou mais</option>
               </select>
             </label>
+            <div id="restaurantGuestNamesWrap" hidden style="margin-top: 15px;">
+              <label>
+                <span>NOME DOS ACOMPANHANTES</span>
+                <textarea name="nomes_acompanhantes_restaurante" rows="2" placeholder="Digite o nome de quem vai com você"></textarea>
+              </label>
+            </div>
           </div>
           <p class="restaurant-small restaurant-form-reminder">Lembrando: cada convidado ficará responsável pelo próprio consumo no restaurante.</p>
           <button type="submit" class="gold-button submit-button">ENVIAR RESPOSTA</button>
           <p class="form-status" id="restaurantStatus" aria-live="polite"></p>
         </form>
+        
       </div>
       <button class="prev-arrow" data-prev aria-label="Página anterior">←</button>
     </section>
-
+    <!-- =========================
+         08 — MENSAGEM APÓS CONFIRMAÇÃO DO RESTAURANTE
+         ========================= -->
+    <section class="page page-response" id="restaurantResponse" aria-label="Mensagem de confirmação do restaurante">
+      <div class="response-content">
+        <p class="eyebrow">MUITO OBRIGADO</p>
+        <h2 id="restResponseTitle">Tudo certo!</h2>
+        <p class="response-text" id="restResponseText">
+          Sua resposta foi enviada. Agradecemos por nos ajudar com a organização.
+        </p>
+        <div class="response-mark">♡</div>
+        <button type="button" class="gold-button response-back" id="backToInvitationFromRest">VOLTAR AO CONVITE</button>
+      </div>
+    </section>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
